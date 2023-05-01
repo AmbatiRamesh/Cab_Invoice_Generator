@@ -11,4 +11,11 @@ public class CabInvoiceGenerator {
             return MINIMUM_AMOUNT;
         return cost;
     }
+    public double calculateFareForMultipleRides( Ride[] rides) {
+        double cost = 0;
+        for (Ride ride : rides) {
+            cost = cost + this.travelCost(ride.distance, ride.time);
+        }
+        return cost;
+    }
 }
