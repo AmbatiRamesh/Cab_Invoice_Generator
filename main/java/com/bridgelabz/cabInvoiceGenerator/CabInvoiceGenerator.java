@@ -18,4 +18,12 @@ public class CabInvoiceGenerator {
         }
         return cost;
     }
+    public  EnhancedInvoice calculateFareDescription(Ride[] rides) {
+        double cost = 0;
+        for (Ride ride : rides) {
+            cost = cost + this.travelCost(ride.distance, ride.time);
+        }
+        double avgFare = 0;
+        return new EnhancedInvoice(rides.length, cost,avgFare);
+    }
 }
